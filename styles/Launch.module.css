@@ -1,0 +1,51 @@
+.container {
+    padding: 2px 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+    margin: 10px 300px 10px 10px;
+}
+
+.table {
+    table-layout: auto;
+}
+
+.ten {
+    width: 20%;
+}
+.ninety {
+    width: 80%;
+  }
+.imageRow {
+    display: flex;
+    width: 100%;
+}
+
+.th, .td {
+    padding: 15px;
+    text-align: left;
+  }
+
+  .th, .td {
+    border-bottom: 1px solid #ddd;
+  }
+
+.imageWrapper {
+    margin: 10px;
+    display: inline-block;
+    width: 75px;
+    padding: 75px;
+    overflow: hidden;
+    position: relative;
+}
+.imageWrapper > img {
+    max-height: 100%;
+    max-width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.returnButton {
+    position: Fixed;
+    top: 120px;
+    right: 25px;
+  }

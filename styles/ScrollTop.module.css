@@ -1,0 +1,14 @@
+.scrollTopBtn {
+    transition: opacity .5s, visibility .5s;
+    opacity: 0;  
+    visibility: hidden;
+    border-radius: 0.8em;
+    padding: 1em;
+       
+}
+
+.scrollTopBtnShow {
+    opacity: 1;  
+    visibility: visible;
+
+}
