@@ -14,11 +14,15 @@ function createApolloClient(): ApolloClient<NormalizedCacheObject> {
     link: new HttpLink({
       uri: 'https://api.spacex.land/graphql/'
     }),
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({ resultCaching: true, addTypename: true }),
     // Provide some optional constructor fields
     defaultOptions: {
       watchQuery: {
-        fetchPolicy: 'cache-and-network'
+        fetchPolicy: 'cache-and-network',
+        nextFetchPolicy: 'cache-first'
+      },
+      query: {
+        fetchPolicy: 'cache-first'
       }
     }
   })
@@ -52,6 +56,7 @@ export function initializeApollo(
 export function useApollo(
   initialState: null
 ): ApolloClient<NormalizedCacheObject> {
+  console.log('initializing Apollo')
   const store = useMemo(() => initializeApollo(initialState), [initialState])
   return store
 }
